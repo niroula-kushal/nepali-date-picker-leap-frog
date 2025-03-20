@@ -295,7 +295,7 @@ describe('Test: calendarFunctions.getBsMonthInfoByBsDate(bsYear, bsMonth, bsDate
       bsDate: 30,
       weekDay: 4,
       formattedDate: 'बुध, पौष ३०, २०८२',
-      adDate: new Date(2025, 12, 14),
+      adDate: new Date(2026, 0, 14),
       bsMonthFirstAdDate: new Date(2025, 11, 16),
       bsMonthDays: 30
     });
@@ -307,7 +307,7 @@ describe('Test: calendarFunctions.getBsMonthInfoByBsDate(bsYear, bsMonth, bsDate
       weekDay: 5,
       formattedDate: 'बिही, माघ २९, २०८२',
       adDate: new Date(2026, 1, 12),
-      bsMonthFirstAdDate: new Date(2025, 12, 15),
+      bsMonthFirstAdDate: new Date(2026, 0, 15),
       bsMonthDays: 29
     });
 
@@ -330,6 +330,84 @@ describe('Test: calendarFunctions.getBsMonthInfoByBsDate(bsYear, bsMonth, bsDate
       formattedDate: 'सोम, चैत ३०, २०८२',
       adDate: new Date(2026, 3, 13),
       bsMonthFirstAdDate: new Date(2026, 2, 15),
+      bsMonthDays: 30
+    });
+  });
+
+  it('Should return correct date for edge cases of 2083 BS', function () {
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 6, 31, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 6,
+      bsDate: 31,
+      weekDay: 7,
+      formattedDate: 'शनि, असोज ३१, २०८३',
+      adDate: new Date(2026, 9, 17),
+      bsMonthFirstAdDate: new Date(2026, 8, 17),
+      bsMonthDays: 31
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 7, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 7,
+      bsDate: 30,
+      weekDay: 2,
+      formattedDate: 'सोम, कार्तिक ३०, २०८३',
+      adDate: new Date(2026, 10, 16),
+      bsMonthFirstAdDate: new Date(2026, 9, 18),
+      bsMonthDays: 30
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 8, 29, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 8,
+      bsDate: 29,
+      weekDay: 3,
+      formattedDate: 'मंगल, मंसिर २९, २०८३',
+      adDate: new Date(2026, 11, 15),
+      bsMonthFirstAdDate: new Date(2026, 10, 17),
+      bsMonthDays: 29
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 9, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 9,
+      bsDate: 30,
+      weekDay: 5,
+      formattedDate: 'बिही, पौष ३०, २०८३',
+      adDate: new Date(2027, 0, 14),
+      bsMonthFirstAdDate: new Date(2026, 11, 16),
+      bsMonthDays: 30
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 10, 29, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 10,
+      bsDate: 29,
+      weekDay: 6,
+      formattedDate: 'शुक्र, माघ २९, २०८३',
+      adDate: new Date(2027, 1, 12),
+      bsMonthFirstAdDate: new Date(2027, 0, 15),
+      bsMonthDays: 29
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 11, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 11,
+      bsDate: 30,
+      weekDay: 1,
+      formattedDate: 'आइत, फागुन ३०, २०८३',
+      adDate: new Date(2027, 2, 14),
+      bsMonthFirstAdDate: new Date(2027, 1, 13),
+      bsMonthDays: 30
+    });
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2083, 12, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2083,
+      bsMonth: 12,
+      bsDate: 30,
+      weekDay: 3,
+      formattedDate: 'मंगल, चैत ३०, २०८३',
+      adDate: new Date(2027, 3, 13),
+      bsMonthFirstAdDate: new Date(2027, 2, 15),
       bsMonthDays: 30
     });
   });
