@@ -273,8 +273,63 @@ describe('Test: calendarFunctions.getBsMonthInfoByBsDate(bsYear, bsMonth, bsDate
       bsDate: 30,
       weekDay: 1,
       formattedDate: 'आइत, कार्तिक ३०, २०८२',
-      adDate: new Date(2025, 9, 16),
-      bsMonthFirstAdDate: new Date(2025, 8, 18),
+      adDate: new Date(2025, 10, 16),
+      bsMonthFirstAdDate: new Date(2025, 9, 18),
+      bsMonthDays: 30
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2082, 8, 29, '%D, %M %d, %y')).toEqual({
+      bsYear: 2082,
+      bsMonth: 8,
+      bsDate: 29,
+      weekDay: 2,
+      formattedDate: 'सोम, मंसिर २९, २०८२',
+      adDate: new Date(2025, 11, 15),
+      bsMonthFirstAdDate: new Date(2025, 10, 17),
+      bsMonthDays: 29
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2082, 9, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2082,
+      bsMonth: 9,
+      bsDate: 30,
+      weekDay: 4,
+      formattedDate: 'बुध, पौष ३०, २०८२',
+      adDate: new Date(2025, 12, 14),
+      bsMonthFirstAdDate: new Date(2025, 11, 16),
+      bsMonthDays: 30
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2082, 10, 29, '%D, %M %d, %y')).toEqual({
+      bsYear: 2082,
+      bsMonth: 10,
+      bsDate: 29,
+      weekDay: 5,
+      formattedDate: 'बिही, माघ २९, २०८२',
+      adDate: new Date(2026, 1, 12),
+      bsMonthFirstAdDate: new Date(2025, 12, 15),
+      bsMonthDays: 29
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2082, 11, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2082,
+      bsMonth: 11,
+      bsDate: 30,
+      weekDay: 7,
+      formattedDate: 'शनि, फागुन ३०, २०८२',
+      adDate: new Date(2026, 2, 14),
+      bsMonthFirstAdDate: new Date(2026, 1, 13),
+      bsMonthDays: 30
+    });
+
+    expect(calendarFunctions.getBsMonthInfoByBsDate(2082, 12, 30, '%D, %M %d, %y')).toEqual({
+      bsYear: 2082,
+      bsMonth: 12,
+      bsDate: 30,
+      weekDay: 2,
+      formattedDate: 'सोम, चैत ३०, २०८२',
+      adDate: new Date(2026, 3, 13),
+      bsMonthFirstAdDate: new Date(2026, 2, 15),
       bsMonthDays: 30
     });
   });
